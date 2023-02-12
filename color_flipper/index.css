@@ -14,5 +14,19 @@ body {
 
 div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+div > * {
+    margin-top: 15px;
+}
+
+button {
+    width: 5vw;
+    height: 5vh;
+    background-color: transparent;
+    border-color: blue;
+    color: white;
 }
