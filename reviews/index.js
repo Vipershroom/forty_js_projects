@@ -28,3 +28,57 @@ const reviews = [
       text: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
     },
   ]
+
+const img = document.querySelector('#img')
+const name = document.querySelector('#name')
+const job = document.querySelector('#job')
+const content = document.querySelector('#content')
+const left = document.querySelector('#left')
+const right = document.querySelector('#right')
+const random = document.querySelector('#random')
+
+function update(index) {
+  if (index > (reviews.length - 1)) {
+    index = 0
+  }
+  newReview = reviews[index]
+  img.setAttribute('src', newReview.img)
+  name.textContent = newReview.name
+  job.textContent = newReview.content
+  content.textContent = newReview.text
+
+}
+
+let index = 0
+update(index)
+
+left.addEventListener('click', () => {
+  if (index === 0) {
+    index = (reviews.length - 1)
+    update(index)
+    return
+  }
+  index -= 1
+  update(index)
+})
+
+right.addEventListener('click', () => {
+  if (index === (reviews.length - 1)) {
+    index = 0
+    update(index)
+    return
+  }
+  index += 1
+  update(index)
+})
+
+random.addEventListener('click', () => {
+  while (true) {
+    num = Math.floor(Math.random() * (reviews.length))
+    if (num !== index) {
+      index = num
+      break
+    }
+  }
+  update(index)
+})
