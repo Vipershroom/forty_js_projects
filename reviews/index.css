@@ -22,9 +22,21 @@ body {
 }
 
 img {
+    margin-top: 10px;
     width: 22%;
     height: 22vh;
     border-radius: 50%;
+}
+
+#circle {
+    height: 22vh;
+    width: calc(22% / 2);
+    background-color: rgb(53, 199, 243);
+    border-radius: 50%;
+    position: absolute;
+    top: 19.2rem;
+    right: 52.2rem;
+    z-index: -1;
 }
 
 .buttons {
